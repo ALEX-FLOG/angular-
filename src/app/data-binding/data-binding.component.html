@@ -1,0 +1,8 @@
+<input #input1 type="text" (input)="onInputChange($event)" />
+
+<!-- 模板引用变量 -->
+<button (click)="onButtonClick(input1)">点击</button>
+
+<P>双向绑定</P>
+<input [(ngModel)]="inputValue" type="text" />
+<p>输入的值：{{ inputValue }}</p>

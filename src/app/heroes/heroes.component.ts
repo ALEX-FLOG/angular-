@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from '../dto/hero';
 import { SharedModule } from '../shared/shared.module';
 
 
