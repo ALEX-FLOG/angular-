@@ -1,9 +1,11 @@
 # Editor configuration, see https://editorconfig.org
+# 此文件用于规范不同编辑器的代码格式
 root = true
 
 [*]
 charset = utf-8
 indent_style = space
+# 缩进大小
 indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
