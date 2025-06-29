@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [FormsModule],
-  exports: [FormsModule] // 导出 FormsModule 供其他组件使用
+  imports: [FormsModule, ReactiveFormsModule], // 导入 FormsModule 和 ReactiveFormsModule
+  exports: [FormsModule, ReactiveFormsModule] // 导出 FormsModule 和 ReactiveFormsModule 供其他组件使用
 })
 export class SharedModule {}

@@ -1,0 +1,16 @@
+<form [formGroup]="formData">
+    <div>
+        <label for="name">名字:</label>
+        <input id="name" formControlName="name" type="text" class="form-control" />
+    </div>
+
+    <div>
+        <label for="age">年龄:</label>
+        <input id="age" formControlName="age" type="number" class="form-control" />
+    </div>
+
+    <p>名字:{{formData.get('name')?.value}} 年龄:{{formData.get('age')?.value}}</p>
+    <button (click)="submit()">提交</button>
+    <button (click)="changeTo(18)">一键18岁</button>
+
+</form>

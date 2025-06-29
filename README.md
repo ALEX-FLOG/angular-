@@ -61,3 +61,50 @@ ng generate module shared
 #### 5. 模版引用变量
 - [ # ] 符号可以定义一个 模版引用变量，通过模版引用变量可以使用别的标签的数据
 - 参考文件 data-binding.component.html
+
+#### 5. 表单控件
+- for="age" 属性的值必须与对应输入控件的 id 属性值一致。
+通过这种关联，点击标签时会自动聚焦到对应的输入控件。
+```
+  <div>
+    <label for="age">年龄:</label>
+    <input id="age" formControlName="age" type="number" class="form-control" />
+  </div>
+```
+
+- 表单初始化
+```
+  /** 表单数据 */
+  formData: FormGroup<FormData> = new FormGroup({
+    //- nonNullable: true 不允许为null
+    //"李四"  初始值
+    name: new FormControl<string>("李四", { nonNullable: true }),
+    age: new FormControl<number>(88, { nonNullable: true })
+  });
+```
+
+- formgroup取值
+```
+<p>名字:{{formData.get('name')?.value}}</p>
+```
+
+- fpatchValue  更新部分formgroup数据
+```
+  // 更新表单数据
+  changeTo = (age: number) => {   
+    this.formData.patchValue({ age });
+    console.log('表单数据更新:', this.formData.value); 
+  }
+```
+
+- setValue  更新全部formgroup数据
+```
+  // 更新表单数据
+  changeTo = (age: number) => {   
+    this.formData.setValue({
+    name: '张三',
+    age: 25
+  });
+    console.log('表单数据更新:', this.formData.value); 
+  }
+```
